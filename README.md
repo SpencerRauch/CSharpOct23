@@ -1,1 +1,1 @@
-"#CSharp October 23" 
+#CSharp October 23
