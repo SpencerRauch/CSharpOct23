@@ -49,7 +49,7 @@ class SinglyLinkedList {
      */
     isEmpty() {
         //your code here
-     }
+    }
 
     /**
      * Creates a new node with the given data and inserts it at the back of
@@ -61,7 +61,7 @@ class SinglyLinkedList {
      */
     insertAtBack(data) {
         //your code here
-     }
+    }
 
     /**
      * Creates a new node with the given data and inserts it at the back of
@@ -75,7 +75,7 @@ class SinglyLinkedList {
      */
     insertAtBackRecursive(data, runner = this.head) {
         //your code here
-     }
+    }
 
     /**
      * Calls insertAtBack on each item of the given array.
