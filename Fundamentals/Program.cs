@@ -3,6 +3,7 @@ Console.WriteLine("Hello, World! Edited");
 
 int Num = 9;
 string Name = "Bob";
+string Flavor = "Chocolate";
 
 Console.WriteLine($"{Name} has {Num} coconuts");
 
@@ -45,3 +46,17 @@ foreach(KeyValuePair<string,int> OnePet in PetAges)
     Console.WriteLine($"{OnePet.Key} - {OnePet.Value}");
 }
 
+static void SayHello()
+{
+    Console.WriteLine("Hello how are you doing today?");
+}
+
+static int MathingTheMath(int numOne, int numTwo=100)
+{
+    return numOne + numTwo;
+}
+
+SayHello();
+
+int Result = MathingTheMath(5);
+Console.WriteLine(Result);
