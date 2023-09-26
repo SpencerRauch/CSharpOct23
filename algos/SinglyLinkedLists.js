@@ -149,14 +149,14 @@ class SinglyLinkedList {
      */
     removeHead() {
         //Your code here
-     }
+    }
 
     // EXTRA
     /**
      * Calculates the average of this list.
      * - Time: (?).
      * - Space: (?).
-     * @returns {number|NaN} The average of the node's data.
+     * @returns {number|null} The average of the node's data or null if empty.
      */
     average() { 
         //your code here
@@ -164,16 +164,17 @@ class SinglyLinkedList {
 }
 
 let testList = new SinglyLinkedList();
-test.insertAtBackMany([10,8,12,5,15])
+testList.insertAtBackMany([10,8,12,5,15])
 
-// insert at front test
+// // insert at front test
 // testList.insertAtFront(999);
+// testList.toArr();
 
-// remove head test
+// // remove head test
 // testList.removeHead();
 // testList.toArr();
 
-// average test
-// console.log(testList.average());
+// // average test
+// console.log("Average: ", testList.average());
 
 
