@@ -1,0 +1,14 @@
+C:\stacks\CSharp\Oct23\OOPLecture\bin\Debug\net6.0\OOPLecture.exe
+C:\stacks\CSharp\Oct23\OOPLecture\bin\Debug\net6.0\OOPLecture.deps.json
+C:\stacks\CSharp\Oct23\OOPLecture\bin\Debug\net6.0\OOPLecture.runtimeconfig.json
+C:\stacks\CSharp\Oct23\OOPLecture\bin\Debug\net6.0\OOPLecture.dll
+C:\stacks\CSharp\Oct23\OOPLecture\bin\Debug\net6.0\OOPLecture.pdb
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.GeneratedMSBuildEditorConfig.editorconfig
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.AssemblyInfoInputs.cache
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.AssemblyInfo.cs
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.csproj.CoreCompileInputs.cache
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.dll
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\refint\OOPLecture.dll
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.pdb
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\OOPLecture.genruntimeconfig.cache
+C:\stacks\CSharp\Oct23\OOPLecture\obj\Debug\net6.0\ref\OOPLecture.dll
