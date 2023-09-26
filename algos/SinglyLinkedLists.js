@@ -128,4 +128,52 @@ class SinglyLinkedList {
         console.log(arr);
         return arr;
     }
+
+    /**
+     * Creates a new node with the given data and inserts that node at the front
+     * of this list.
+     * - Time: (?).
+     * - Space: (?).
+     * @param {any} data The data for the new node.
+     * @returns {SinglyLinkedList} This list.
+     */
+    insertAtFront(data) { 
+        //your code here
+    }
+
+    /**
+     * Removes the first node of this list.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {any} The data from the removed node or null if no first node.
+     */
+    removeHead() {
+        //Your code here
+     }
+
+    // EXTRA
+    /**
+     * Calculates the average of this list.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {number|NaN} The average of the node's data.
+     */
+    average() { 
+        //your code here
+    }
 }
+
+let testList = new SinglyLinkedList();
+test.insertAtBackMany([10,8,12,5,15])
+
+// insert at front test
+// testList.insertAtFront(999);
+
+// remove head test
+// testList.removeHead();
+// testList.toArr();
+
+// average test
+// console.log(testList.average());
+
+
