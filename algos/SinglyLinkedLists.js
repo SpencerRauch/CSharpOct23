@@ -137,12 +137,12 @@ class SinglyLinkedList {
      * @param {any} data The data for the new node.
      * @returns {SinglyLinkedList} This list.
      */
-    insertAtFront(data) { 
+    insertAtFront(data) {
         //your code here
         let newHead = new ListNode(data);
         newHead.next = this.head;
         this.head = newHead;
-        return this
+        return this;
     }
 
     /**
@@ -154,10 +154,10 @@ class SinglyLinkedList {
     removeHead() {
         //Your code here
         if (this.isEmpty()) return null;
-        let removed = this.head
-        this.head = this.head.next
-        return removed.data
-     }
+        let removed = this.head;
+        this.head = this.head.next;
+        return removed.data;
+    }
 
     // EXTRA
     /**
@@ -166,23 +166,57 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {number|null} The average of the node's data or null if empty.
      */
-    average() { 
+    average() {
         //your code here
-        if (this.isEmpty()) return null
-        let runner = this.head
+        if (this.isEmpty()) return null;
+        let runner = this.head;
         let count = 0;
         let sum = 0;
-        while (runner){
-            count++
-            sum += runner.data
-            runner = runner.next
+        while (runner) {
+            count++;
+            sum += runner.data;
+            runner = runner.next;
         }
         return sum / count;
     }
+
+    /**
+     * Removes the last node of this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {any} The data from the node that was removed.
+     */
+    removeBack() { 
+        //Your code here
+    }
+
+    /**
+     * Determines whether or not the given search value exists in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @returns {boolean}
+     */
+    contains(val) { 
+        //Your code here
+    }
+
+    /**
+     * Determines whether or not the given search value exists in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @param {?ListNode} current The current node during the traversal of this list
+     *    or null when the end of the list has been reached.
+     * @returns {boolean}
+     */
+    containsRecursive(val, current = this.head) {
+        //Your code here
+     }
 }
 
 let testList = new SinglyLinkedList();
-testList.insertAtBackMany([10,8,12,5,15])
+testList.insertAtBackMany([10, 8, 12, 5, 15]);
 
 // // insert at front test
 // testList.insertAtFront(999);
