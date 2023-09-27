@@ -191,7 +191,7 @@ class SinglyLinkedList {
     }
 
     /**
-     * Determines whether or not the given search value exists in this list.
+     * Determines whether or not the given search value exists in this list iteratively.
      * - Time: O(?).
      * - Space: O(?).
      * @param {any} val The data to search for in the nodes of this list.
@@ -202,7 +202,7 @@ class SinglyLinkedList {
     }
 
     /**
-     * Determines whether or not the given search value exists in this list.
+     * Determines whether or not the given search value exists in this list recursively.
      * - Time: O(?).
      * - Space: O(?).
      * @param {any} val The data to search for in the nodes of this list.
