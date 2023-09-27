@@ -34,6 +34,41 @@ public class FirstController : Controller
         //return View("MyView");
     }
 
+    [HttpGet("form")]
+    public ViewResult MyForm()
+    {
+        return View();
+    }
+
+    // [HttpPost("process")]
+    // public RedirectResult Process(string Name, int Passcode)
+    // {
+    //     Console.WriteLine($"Got credentials: {Name} {Passcode}");
+    //     return Redirect("form");
+        
+    // }
+
+    // [HttpPost("process")]
+    // public RedirectToActionResult Process(string Name, int Passcode)
+    // {
+    //     Console.WriteLine($"Got credentials: {Name} {Passcode}");
+    //     return RedirectToAction("MyForm");
+        
+    // }
+
+    [HttpPost("process")]
+    public IActionResult Process(string Name, int Passcode)
+    {
+        Console.WriteLine($"Got credentials: {Name} {Passcode}");
+        if (Passcode == 1234)
+        {
+            return RedirectToAction("MyView");
+        }
+        return View("TryAgain");
+        
+    }
+
+
     [HttpGet("{**path}")]
     public string Lost()
     {

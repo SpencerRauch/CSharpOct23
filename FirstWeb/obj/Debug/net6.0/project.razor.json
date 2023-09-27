@@ -18377,6 +18377,16 @@
       "FilePath": "c:\\stacks\\CSharp\\Oct23\\FirstWeb\\Views\\First\\MyView.cshtml",
       "TargetPath": "Views\\First\\MyView.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\stacks\\CSharp\\Oct23\\FirstWeb\\Views\\First\\MyForm.cshtml",
+      "TargetPath": "Views\\First\\MyForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\stacks\\CSharp\\Oct23\\FirstWeb\\Views\\First\\TryAgain.cshtml",
+      "TargetPath": "Views\\First\\TryAgain.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.3"
