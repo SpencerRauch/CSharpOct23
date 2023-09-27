@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "muTGf0dx+s6BavwBTgk6Mt7o7IKXfGV7pmZvzk4Z8iiDCOeBXg3KvCpP0WRuKDJXTQhqisSxQjyV7+OC4ZylpQ==",
+  "success": true,
+  "projectFilePath": "C:\\stacks\\CSharp\\Oct23\\FirstWeb\\FirstWeb.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.22\\microsoft.netcore.app.host.win-x64.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

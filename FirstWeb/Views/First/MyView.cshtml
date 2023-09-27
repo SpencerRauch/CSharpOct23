@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First View</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+
+    <h1>Now we're serving views 🥳</h1>
+    @{
+        List<string> Names = new(){"Bob","Alice","Alex Miller"};
+            <p>@Names[0]</p>
+            Names.Add("TestName");
+            <p>@Names[3]</p>
+    }
+
+    @foreach (string name in Names)
+    {
+        if (name == "Alice")
+        {
+            <img src="~/img/cake.jpg" alt="cake">
+           <p>Welcome, Alice! We're glad you made it!</p> 
+        }
+        <p>@(name + " Lastname")</p>
+    }
+
+    @foreach (string flavor in ViewBag.Flavors)
+    {
+        <p>@flavor</p>
+    }
+
+    @for (int i = 0; i < ViewBag.Number; i++)
+    {
+        <p>@ViewBag.Name</p>
+    }
+    </div>
+</body>
+</html>
