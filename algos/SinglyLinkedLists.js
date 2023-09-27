@@ -186,8 +186,24 @@ class SinglyLinkedList {
      * - Space: O(?).
      * @returns {any} The data from the node that was removed or null if no nodes were removed.
      */
-    removeBack() { 
-        //Your code here
+    removeBack() {
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        // only one node, remove the head
+        if (this.head.next === null) {
+            return this.removeHead();
+        }
+        //more than one node, move to one before the end
+        let runner = this.head;
+        while (runner.next.next) {
+            runner = runner.next;
+        }
+
+        const removedData = runner.next.data;
+        runner.next = null;
+        return removedData;
     }
 
     /**
@@ -197,8 +213,13 @@ class SinglyLinkedList {
      * @param {any} val The data to search for in the nodes of this list.
      * @returns {boolean}
      */
-    contains(val) { 
-        //Your code here
+    contains(val) {
+        let runner = this.head;
+        while (runner) {
+            if (runner.data === val) return true;
+            runner = runner.next;
+        }
+        return false;
     }
 
     /**
@@ -212,11 +233,17 @@ class SinglyLinkedList {
      */
     containsRecursive(val, current = this.head) {
         //Your code here
-     }
+        if (!current) return false;
+        if (current.data === val) return true;
+        return this.containsRecursive(val, current.next);
+    }
 }
 
 let testList = new SinglyLinkedList();
 testList.insertAtBackMany([10, 8, 12, 5, 15]);
+
+console.log(testList.containsRecursive(8));
+
 
 // // insert at front test
 // testList.insertAtFront(999);
