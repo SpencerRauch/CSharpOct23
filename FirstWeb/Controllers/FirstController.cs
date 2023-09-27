@@ -30,7 +30,8 @@ public class FirstController : Controller
         ViewBag.Name = "Bob";
         ViewBag.Number = 10;
         ViewBag.Flavors = new List<string>(){"vanilla", "strawberry"};
-        return View();
+        return View(); // we can leave out the view name if it matches the action name
+        //return View("MyView");
     }
 
     [HttpGet("{**path}")]
