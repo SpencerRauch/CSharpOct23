@@ -247,7 +247,7 @@ class SinglyLinkedList {
      */
     secondToLast() {
         //your code here
-     }
+    }
 
     /**
      * Removes the node that has the matching given val as it's data.
@@ -259,7 +259,7 @@ class SinglyLinkedList {
      */
     removeVal(val) {
         //your code here
-     }
+    }
 
     // EXTRA
     /**
