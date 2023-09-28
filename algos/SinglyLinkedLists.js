@@ -246,7 +246,17 @@ class SinglyLinkedList {
      *    second to last node.
      */
     secondToLast() {
-        //your code here
+        if (!this.head || !this.head.next) {
+            return null;
+        }
+
+        // There are at least 2 nodes since the above return hasn't happened.
+        let runner = this.head;
+
+        while (runner.next.next) {
+            runner = runner.next;
+        }
+        return runner.data;
     }
 
     /**
@@ -258,7 +268,25 @@ class SinglyLinkedList {
      * @returns {boolean} Indicates if a node was removed or not.
      */
     removeVal(val) {
-        //your code here
+        if (this.isEmpty()) {
+            return false;
+        }
+
+        if (this.head.data === val) {
+            this.removeHead();
+            return true;
+        }
+
+        let runner = this.head;
+
+        while (runner.next) {
+            if (runner.next.data === val) {
+                runner.next = runner.next.next;
+                return true;
+            }
+            runner = runner.next;
+        }
+        return false;
     }
 
     // EXTRA
@@ -271,8 +299,33 @@ class SinglyLinkedList {
      *    should be inserted in front of.
      * @returns {boolean} To indicate whether the node was pre-pended or not.
      */
-    prepend(newVal, targetVal) { 
-        //your code here
+    prepend(newVal, targetVal) {
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        if (this.head.data === targetVal) {
+            this.insertAtFront(newVal);
+            return this.head;
+        }
+
+        // we already know we're not going to need to prepend before the head
+        let runner = this.head;
+
+        while (runner) {
+            // End of list and not found.
+            if (runner.next === null) {
+                return null;
+            }
+
+            if (runner.next.data === targetVal) {
+                const prependNode = new ListNode(newVal);
+                prependNode.next = runner.next;
+                runner.next = prependNode;
+                return prependNode;
+            }
+            runner = runner.next;
+        }
     }
 }
 
