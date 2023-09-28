@@ -2,8 +2,30 @@
     ViewData["Title"] = "Home Page";
     @* Layout = "_BareBones"; *@
 }
-
+@model Pet
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>Tell me about your pet:</h1>
+    <form asp-action="CreatePet" asp-controller="Home" method="post">
+        <div class="mb-3">
+            <label asp-for="Name">Pet Name:</label>
+            <input asp-for="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Species"></label>
+            <input asp-for="Species">
+            <span asp-validation-for="Species" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age"></label>
+            <input asp-for="Age">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IsAdorable"></label>
+            <input asp-for="IsAdorable" >
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    <a asp-action="AllPets" asp-controller="Home" class="btn btn-primary mt-3">All Pets</a>
 </div>

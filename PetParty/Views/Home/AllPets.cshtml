@@ -1,0 +1,9 @@
+@model List<Pet>
+
+<div class="text-center">
+    <h1>All The Pets</h1>
+    @foreach (Pet p in Model)
+    {
+        <p>@p.Name is a @p.Age year old @p.Species and they @(p.IsAdorable ? "are" : "aren't") adorable</p>
+    }
+</div>
