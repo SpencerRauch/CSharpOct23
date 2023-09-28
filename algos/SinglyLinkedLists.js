@@ -237,6 +237,43 @@ class SinglyLinkedList {
         if (current.data === val) return true;
         return this.containsRecursive(val, current.next);
     }
+
+    /**
+     * Retrieves the data of the second to last node in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {any} The data of the second to last node or null if there is no
+     *    second to last node.
+     */
+    secondToLast() {
+        //your code here
+     }
+
+    /**
+     * Removes the node that has the matching given val as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The value to compare to the node's data to find the
+     *    node to be removed.
+     * @returns {boolean} Indicates if a node was removed or not.
+     */
+    removeVal(val) {
+        //your code here
+     }
+
+    // EXTRA
+    /**
+     * Inserts a new node before a node that has the given value as its data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} newVal The value to use for the new node that is being added.
+     * @param {any} targetVal The value to use to find the node that the newVal
+     *    should be inserted in front of.
+     * @returns {boolean} To indicate whether the node was pre-pended or not.
+     */
+    prepend(newVal, targetVal) { 
+        //your code here
+    }
 }
 
 let testList = new SinglyLinkedList();
