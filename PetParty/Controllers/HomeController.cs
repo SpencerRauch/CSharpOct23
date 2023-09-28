@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PetParty.Models;
 
 namespace PetParty.Controllers;
@@ -18,7 +19,14 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        return View();
+        ViewBag.Choices = new List<SelectListItem>()
+        {
+            new SelectListItem("--pick one--","",true,true),
+            new SelectListItem("Bear","Bear"),
+            new SelectListItem("Bobcat","Bobcat"),
+            new SelectListItem("Deer","Deer")
+        };
+        return View("Index");
     }
 
     [HttpPost("pets/create")]
@@ -27,7 +35,7 @@ public class HomeController : Controller
         Console.WriteLine($"{newPet.Name} is a {newPet.Age} year old {newPet.Species} and they {newPet.IsAdorable}");
         if (!ModelState.IsValid)
         {
-            return View("Index");
+            return Index();
         }
         FakePetDb.Add(newPet);
         return RedirectToAction("AllPets"); //we will change this in a bit

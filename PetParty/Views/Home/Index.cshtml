@@ -13,7 +13,10 @@
         </div>
         <div class="mb-3">
             <label asp-for="Species"></label>
-            <input asp-for="Species">
+            @* <input asp-for="Species"> *@
+            <select asp-for="Species" asp-items="@ViewBag.Choices">
+
+            </select>
             <span asp-validation-for="Species" class="text-danger"></span>
         </div>
         <div class="mb-3">
