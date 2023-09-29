@@ -308,7 +308,6 @@ class SinglyLinkedList {
             this.insertAtFront(newVal);
             return this.head;
         }
-
         // we already know we're not going to need to prepend before the head
         let runner = this.head;
 
@@ -327,23 +326,48 @@ class SinglyLinkedList {
             runner = runner.next;
         }
     }
+
+    /**
+     * Concatenates the nodes of a given list onto the back of this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {SinglyLinkedList} addList An instance of a different list whose
+     *    whose nodes will be added to the back of this list.
+     * @returns {SinglyLinkedList} This list with the added nodes.
+     */
+    concat(addList) {
+        //Your code here
+    }
+
+    /**
+     * Finds the node with the smallest data and moves that node to the front of
+     * this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {SinglyLinkedList} This list.
+     */
+    moveMinToFront() { 
+        //Your code here
+    }
+
+    // EXTRA
+    /**
+     * Splits this list into two lists where the 2nd list starts with the node
+     * that has the given value.
+     * splitOnVal(5) for the list (1=>3=>5=>2=>4) will change list to (1=>3)
+     * and the return value will be a new list containing (5=>2=>4)
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The value in the node that the list should be split on.
+     * @returns {SinglyLinkedList} The split list containing the nodes that are
+     *    no longer in this list.
+     */
+    splitOnVal(val) {
+        //Your code here
+    }
 }
 
-let testList = new SinglyLinkedList();
-testList.insertAtBackMany([10, 8, 12, 5, 15]);
-
-console.log(testList.containsRecursive(8));
-
-
-// // insert at front test
-// testList.insertAtFront(999);
-// testList.toArr();
-
-// // remove head test
-// testList.removeHead();
-// testList.toArr();
-
-// // average test
-// console.log("Average: ", testList.average());
+let listOne = new SinglyLinkedList().insertAtBackMany([2,3,4,1])
+let listTwo = new SinglyLinkedList().insertAtBackMany([5,6,7,8,9])
 
 
