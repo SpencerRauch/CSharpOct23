@@ -336,7 +336,17 @@ class SinglyLinkedList {
      * @returns {SinglyLinkedList} This list with the added nodes.
      */
     concat(addList) {
-        //Your code here
+        let runner = this.head;
+
+        if (runner === null) {
+            this.head = addList.head;
+        } else {
+            while (runner.next) {
+                runner = runner.next;
+            }
+            runner.next = addList.head;
+        }
+        return this;
     }
 
     /**
@@ -346,8 +356,31 @@ class SinglyLinkedList {
      * - Space: O(?).
      * @returns {SinglyLinkedList} This list.
      */
-    moveMinToFront() { 
-        //Your code here
+    moveMinToFront() {
+        if (this.isEmpty()) {
+            return this;
+        }
+
+        let minNode = this.head;
+        let runner = this.head;
+        let prev = this.head;
+
+        while (runner.next) {
+            if (runner.next.data < minNode.data) {
+                prev = runner;
+                minNode = runner.next;
+            }
+            runner = runner.next;
+        }
+
+        if (minNode === this.head) {
+            return this;
+        }
+
+        prev.next = minNode.next;
+        minNode.next = this.head;
+        this.head = minNode;
+        return this;
     }
 
     // EXTRA
@@ -363,11 +396,33 @@ class SinglyLinkedList {
      *    no longer in this list.
      */
     splitOnVal(val) {
-        //Your code here
+        const newList = new SinglyLinkedList();
+
+        if (this.isEmpty()) {
+            return newList;
+        }
+
+        if (this.head.data === val) { // if head is value, empty this list into the new list
+            newList.head = this.head;
+            this.head = null;
+            return newList;
+        }
+
+        let runner = this.head;
+
+        while (runner.next) {
+            if (runner.next.data === val) {
+                newList.head = runner.next;
+                runner.next = null;
+                return newList;
+            }
+            runner = runner.next;
+        }
+        return newList;
     }
 }
 
-let listOne = new SinglyLinkedList().insertAtBackMany([2,3,4,1])
-let listTwo = new SinglyLinkedList().insertAtBackMany([5,6,7,8,9])
+let listOne = new SinglyLinkedList().insertAtBackMany([2, 3, 4, 1]);
+let listTwo = new SinglyLinkedList().insertAtBackMany([5, 6, 7, 8, 9])
 
 
