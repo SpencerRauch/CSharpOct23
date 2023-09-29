@@ -76,10 +76,7 @@ public class ProvidedOptionsAttribute : ValidationAttribute
     }
     // Call upon the protected IsValid method
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)    
-    {   
-        //if we got this from the db, this could be nice and dynamic
-        string[] ValidOptions = new string[]{"Dog","Cat","Fish"};
-
+    {  
         if (Options.Contains((string)value))
         {        
             return ValidationResult.Success;  
