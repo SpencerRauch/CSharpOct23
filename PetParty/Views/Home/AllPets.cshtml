@@ -1,9 +1,26 @@
 @model List<Pet>
+@{
+    int? limit = Context.Session.GetInt32("Limit");
+    bool IsFiltered = limit != null;
+}
 
 <div class="text-center">
     <h1>All The Pets</h1>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+        <form asp-action="SetFilter" asp-controller="Home" method="post">
+            <label for="limit">Minimum age:</label>
+            <input type="number" name="limit" value="@limit">
+            <button class="btn btn-primary">Submit</button>
+        </form>
+        <form asp-action="ClearFilter" asp-controller="Home" method="Post">
+            <button class="btn btn-primary">Clear</button>
+        </form>
+    </div>
     @foreach (Pet p in Model)
     {
+        if (!IsFiltered || IsFiltered && p.Age >= limit)
+        {
         <p>@p.Name is a @p.Age year old @p.Species and they @(p.IsAdorable ? "are" : "aren't") adorable</p>
+        }
     }
 </div>

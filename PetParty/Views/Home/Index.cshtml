@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     @* Layout = "_BareBones"; *@
+    string? LastPet = Context.Session.GetString("LastPet");
+    bool Contributed = LastPet != null;
 }
 @model Pet
 <div class="text-center">
@@ -31,4 +33,5 @@
         <button class="btn btn-primary">Submit</button>
     </form>
     <a asp-action="AllPets" asp-controller="Home" class="btn btn-primary mt-3">All Pets</a>
+    <p>Last Pet Made: @(Contributed ? LastPet : "Please contribute to see all pets")</p>
 </div>

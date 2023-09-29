@@ -32,21 +32,48 @@ public class HomeController : Controller
     [HttpPost("pets/create")]
     public IActionResult CreatePet(Pet newPet)
     {
-        Console.WriteLine($"{newPet.Name} is a {newPet.Age} year old {newPet.Species} and they {newPet.IsAdorable}");
+        if (!ModelState.IsValid)
+        {
+            var message = string.Join(" | ", ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage));
+            Console.WriteLine(message);
+        }
+        // Console.WriteLine($"{newPet.Name} is a {newPet.Age} year old {newPet.Species} and they {newPet.IsAdorable}");
         if (!ModelState.IsValid)
         {
             return Index();
         }
         FakePetDb.Add(newPet);
+        HttpContext.Session.SetString("LastPet",newPet.Name);
         return RedirectToAction("AllPets"); //we will change this in a bit
     }
 
     [HttpGet("pets")]
-    public ViewResult AllPets()
+    public IActionResult AllPets()
     {
-        return View("AllPets",FakePetDb);
+        // string? LastPet = HttpContext.Session.GetString("LastPet");
+        if (HttpContext.Session.GetString("LastPet") == null)
+        {
+            return RedirectToAction("Index");
+        }
+        return View("AllPets", FakePetDb);
     }
 
+    [HttpPost("pets/filter")]
+    public RedirectToActionResult SetFilter(int limit)
+    {
+        HttpContext.Session.SetInt32("Limit", limit);
+        return RedirectToAction("AllPets");
+    }
+
+    [HttpPost("pets/filter/clear")]
+    public RedirectToActionResult ClearFilter()
+    {
+        // HttpContext.Session.Clear();
+        HttpContext.Session.Remove("Limit");
+        return RedirectToAction("AllPets");
+    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
