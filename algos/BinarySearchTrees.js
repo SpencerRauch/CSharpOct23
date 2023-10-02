@@ -46,6 +46,7 @@ class BinarySearchTree {
      */
     isEmpty() {
         //your code here
+        return this.root === null;
     }
 
     /**
