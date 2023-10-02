@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "m4JsyUdUXSCh38ZTZGYKkScN7hbBvVA34YLYFbfET5x7e5MougcUXjrU7c7Ww2f2HYdau/aPlV7KzDK8RjAVLQ==",
+  "success": true,
+  "projectFilePath": "C:\\stacks\\CSharp\\Oct23\\LINQ\\LINQ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\bizar\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.22\\microsoft.netcore.app.host.win-x64.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
