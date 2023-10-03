@@ -151,6 +151,17 @@ class BinarySearchTree {
      */
     contains(searchVal) {
         //your code here
+        let current = this.root;
+
+        while (current) {
+            if (current.data === searchVal) return true;
+            if (searchVal < current.data) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return false;
     }
 
     /**
@@ -162,6 +173,10 @@ class BinarySearchTree {
      */
     containsRecursive(searchVal, current = this.root) {
         //your code here
+        if (current === null) return false;
+        if (current.data === searchVal) return true;
+        if (searchVal < current.data) return this.containsRecursive(searchVal, current.left);
+        return this.containsRecursive(searchVal, current.right);
     }
 
     /**
@@ -172,8 +187,35 @@ class BinarySearchTree {
      * @param {number} newVal The data to be added to a new node.
      * @returns {BinarySearchTree} This tree.
      */
-    insert(newVal) { 
-        //your code here
+    insert(newVal) {
+        const node = new BSTNode(newVal);
+
+        //if empty, make the new root
+        if (this.isEmpty()) {
+            this.root = node;
+            return this;
+        }
+
+        let current = this.root;
+
+        while (true) {
+            if (newVal <= current.data) {
+                if (current.left === null) {
+                    current.left = node;
+                    return this;
+                }
+
+                current = current.left;
+            } else {
+                // newVal is greater than current.data
+                if (current.right === null) {
+                    current.right = node;
+                    return this;
+                }
+
+                current = current.right;
+            }
+        }
     }
 
     /**
@@ -186,8 +228,25 @@ class BinarySearchTree {
      *    the tree is being traversed.
      * @returns {BinarySearchTree} This tree.
      */
-    insertRecursive(newVal, curr = this.root) { 
-        //your code here
+    insertRecursive(newVal, curr = this.root) {
+        if (this.isEmpty()) {
+            this.root = new BSTNode(newVal);
+            return this;
+        }
+
+        if (newVal > curr.data) {
+            if (curr.right === null) {
+                curr.right = new BSTNode(newVal);
+                return this;
+            }
+            return this.insertRecursive(newVal, curr.right);
+        }
+
+        if (curr.left === null) {
+            curr.left = new BSTNode(newVal);
+            return this;
+        }
+        return this.insertRecursive(newVal, curr.left);
     }
 }
 
@@ -229,3 +288,4 @@ threeLevelTree.root.right.left = new BSTNode(13);
 2   6  13  
 */
 
+console.log(threeLevelTree.contains(7));
