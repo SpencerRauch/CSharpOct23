@@ -260,6 +260,12 @@ class BinarySearchTree {
      */
     toArrPreorder(node = this.root, vals = []) {
         //Your code here
+        if (node) {
+            vals.push(node.data);
+            this.toArrPreorder(node.left, vals);
+            this.toArrPreorder(node.right, vals);
+        }
+        return vals;
     }
 
     /**
@@ -273,7 +279,12 @@ class BinarySearchTree {
      * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
      */
     toArrInorder(node = this.root, vals = []) {
-        //Your code here
+        if (node) {
+            this.toArrInorder(node.left, vals);
+            vals.push(node.data);
+            this.toArrInorder(node.right, vals);
+        }
+        return vals;
     }
 
     /**
@@ -287,6 +298,12 @@ class BinarySearchTree {
      */
     toArrPostorder(node = this.root, vals = []) {
         // Your code here 
+        if (node) {
+            this.toArrPostorder(node.left, vals);
+            this.toArrPostorder(node.right, vals);
+            vals.push(node.data);
+        }
+        return vals;
     }
 }
 
@@ -331,21 +348,21 @@ threeLevelTree.root.right.left = new BSTNode(13);
 /***************** Uncomment after insert method is created. ****************/
 const fullTree = new BinarySearchTree();
 fullTree
-.insert(25)
-.insert(15)
-.insert(10)
-.insert(22)
-.insert(4)
-.insert(12)
-.insert(18)
-.insert(24)
-.insert(50)
-.insert(35)
-.insert(70)
-.insert(31)
-.insert(44)
-.insert(66)
-.insert(90);
+    .insert(25)
+    .insert(15)
+    .insert(10)
+    .insert(22)
+    .insert(4)
+    .insert(12)
+    .insert(18)
+    .insert(24)
+    .insert(50)
+    .insert(35)
+    .insert(70)
+    .insert(31)
+    .insert(44)
+    .insert(66)
+    .insert(90);
 
 /* fullTree
                     root
@@ -359,6 +376,6 @@ fullTree
 */
 
 fullTree.print();
-console.log(fullTree.toArrPreorder, "\nshould be \n [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]");
-console.log(fullTree.toArrInorder, "\nshould be \n [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]");
-console.log(fullTree.toArrPostorder, "\nshould be \n [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]");
+console.log(fullTree.toArrPreorder(), "\nshould be \n [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]");
+console.log(fullTree.toArrInorder(), "\nshould be \n [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]");
+console.log(fullTree.toArrPostorder(), "\nshould be \n [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]");
