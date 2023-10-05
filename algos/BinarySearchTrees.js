@@ -305,6 +305,29 @@ class BinarySearchTree {
         }
         return vals;
     }
+
+    /**
+     * Recursively counts the total number of nodes in this tree.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} node The current node during the traversal of this tree.
+     * @returns {number} The total number of nodes.
+     */
+    size(node = this.root) {
+        //Your code here
+    }
+
+    /**
+     * Calculates the height of the tree which is based on how many nodes from
+     * top to bottom (whichever side is taller).
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} node The current node during traversal of this tree.
+     * @returns {number} The height of the tree.
+     */
+    height(node = this.root) { 
+        //Your code here
+    }
 }
 
 const emptyTree = new BinarySearchTree();
@@ -375,7 +398,8 @@ fullTree
     4    12  18  24  31  44 66  90
 */
 
-fullTree.print();
-console.log(fullTree.toArrPreorder(), "\nshould be \n [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]");
-console.log(fullTree.toArrInorder(), "\nshould be \n [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]");
-console.log(fullTree.toArrPostorder(), "\nshould be \n [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]");
+// fullTree.print();
+// console.log(fullTree.toArrPreorder(), "\nshould be \n [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]");
+// console.log(fullTree.toArrInorder(), "\nshould be \n [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]");
+// console.log(fullTree.toArrPostorder(), "\nshould be \n [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]");
+
