@@ -385,7 +385,8 @@ fullTree
     .insert(31)
     .insert(44)
     .insert(66)
-    .insert(90);
+    .insert(90)
+    .insert(1);
 
 /* fullTree
                     root
@@ -396,6 +397,8 @@ fullTree
         10     22      35     70
       /   \   /  \    /  \   /  \
     4    12  18  24  31  44 66  90
+   /
+  1
 */
 
 // fullTree.print();
