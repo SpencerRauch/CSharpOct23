@@ -315,6 +315,10 @@ class BinarySearchTree {
      */
     size(node = this.root) {
         //Your code here
+        if (!node){
+            return 0;
+        }
+        return 1 + this.size(node.left) + this.size(node.right);
     }
 
     /**
@@ -327,6 +331,10 @@ class BinarySearchTree {
      */
     height(node = this.root) { 
         //Your code here
+        if (!node){
+            return 0;
+        }
+        return 1 + Math.max(this.height(node.left), this.height(node.right));
     }
 }
 
