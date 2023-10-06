@@ -315,7 +315,7 @@ class BinarySearchTree {
      */
     size(node = this.root) {
         //Your code here
-        if (!node){
+        if (!node) {
             return 0;
         }
         return 1 + this.size(node.left) + this.size(node.right);
@@ -329,9 +329,9 @@ class BinarySearchTree {
      * @param {Node} node The current node during traversal of this tree.
      * @returns {number} The height of the tree.
      */
-    height(node = this.root) { 
+    height(node = this.root) {
         //Your code here
-        if (!node){
+        if (!node) {
             return 0;
         }
         return 1 + Math.max(this.height(node.left), this.height(node.right));
@@ -346,7 +346,31 @@ class BinarySearchTree {
      * @returns {Array<number>} The data of all nodes in BFS order.
      */
     toArrLevelorder(current = this.root) {
-        //Your code here
+        const queue = [];
+        const vals = [];
+
+        //put the root into our queue
+        if (current) {
+            queue.push(current);
+        }
+
+        //process queue
+        while (queue.length > 0) {
+            const dequeuedNode = queue.shift();
+            //put this node's value into val array
+            vals.push(dequeuedNode.data);
+
+            //queue both children if they exist
+            if (dequeuedNode.left) {
+                queue.push(dequeuedNode.left);
+            }
+
+            if (dequeuedNode.right) {
+                queue.push(dequeuedNode.right);
+            }
+        }
+        
+        return vals;
     }
 }
 
@@ -405,8 +429,7 @@ fullTree
     .insert(31)
     .insert(44)
     .insert(66)
-    .insert(90)
-    .insert(1);
+    .insert(90);
 
 /* fullTree
                     root
@@ -417,8 +440,7 @@ fullTree
         10     22      35     70
       /   \   /  \    /  \   /  \
     4    12  18  24  31  44 66  90
-   /
-  1
+
 */
 
 // fullTree.print();
