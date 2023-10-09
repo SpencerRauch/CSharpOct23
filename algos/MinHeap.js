@@ -18,18 +18,18 @@ class MinHeap {
         this.heap = [null];
     }
 
-    idxOfParent(index){
+    idxOfParent(index) {
         return Math.floor(index / 2);
     }
 
-    idxOfLeftChild(index){
+    idxOfLeftChild(index) {
         return index * 2;
     }
 
-    idxOfRightChild(index){
+    idxOfRightChild(index) {
         return index * 2 + 1;
     }
-    
+
     /**
      * Retrieves the top (minimum number) in the heap without removing it.
      * - Time: O(1) constant.
@@ -38,7 +38,7 @@ class MinHeap {
      */
     top() {
         //Your code here
-     }
+    }
 
     /**
      * Inserts a new number into the heap and maintains the heaps order.
@@ -51,7 +51,7 @@ class MinHeap {
      */
     insert(num) {
         //Your code here
-     }
+    }
 
     /**
      * Logs the tree horizontally with the root on the left and the index in
