@@ -118,6 +118,36 @@ class MinHeap {
         return min;
     }
 
+    extract2() {
+        let min;
+        if (this.heap.length == 1) {
+            return null
+        }
+        if (this.heap.length == 2) {
+            min = this.heap.pop();
+            return min;
+        }
+        min = this.heap[1];
+        this.heap[1] = this.heap.pop();
+        let currentidx = 1;
+        let leftIdx = this.idxOfLeftChild(currentidx);
+        let rightIdx = this.idxOfRightChild(currentidx);
+
+        while (this.heap[leftIdx] < this.heap[currentidx] || this.heap[rightIdx] < this.heap[currentidx]) {
+            if (this.heap[leftIdx] < this.heap[rightIdx]) {
+                [this.heap[leftIdx], this.heap[currentidx]] = [this.heap[currentidx], this.heap[leftIdx]]
+                currentidx = leftIdx;
+            } else {
+                [this.heap[rightIdx], this.heap[currentidx]] = [this.heap[currentidx], this.heap[rightIdx]]
+                currentidx = rightIdx;
+            }
+            leftIdx = this.idxOfLeftChild(currentidx);
+            rightIdx = this.idxOfRightChild(currentidx);
+
+        }
+        return min
+    }
+
     /**
      * Logs the tree horizontally with the root on the left and the index in
      * parenthesis using reverse inorder traversal.
