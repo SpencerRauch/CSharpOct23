@@ -37,7 +37,7 @@ class MinHeap {
      * @returns {?number} Null if empty.
      */
     top() {
-        //Your code here
+        return this.heap.length == 1 ? null : this.heap[1];
     }
 
     /**
