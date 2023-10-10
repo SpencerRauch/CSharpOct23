@@ -83,7 +83,39 @@ class MinHeap {
    * @returns {?number} The min number or null if empty.
    */
     extract() { 
-        //Your code here
+        //If length is 1, heap is empty
+        if (this.heap.length == 1) {
+            return null;
+        }
+        //store min val
+        let min = this.heap[1];
+        //replace min val with last value in array
+        this.heap[1] = this.heap.pop();
+        //initialize parent, left and right
+        let parent = 1;
+        let leftChild = 2;
+        let rightChild = 3;
+        //while the left child is in bounds of the array
+        while (leftChild < this.heap.length) {
+            //consider the left child the smaller branch
+            let smaller = leftChild;
+            //unless right child is in bounds and holds a smaller value
+            if (rightChild < this.heap.length && this.heap[rightChild] < this.heap[leftChild]) {
+                smaller = rightChild;
+            }
+            //if the parent is bigger than the smaller child, swap
+            if (this.heap[parent] > this.heap[smaller]) {
+                let temp = this.heap[parent];
+                this.heap[parent] = this.heap[smaller];
+                this.heap[smaller] = temp;
+            } else break; //if no swap was performed, we're done
+
+            //update variables for next loop
+            parent = smaller;
+            leftChild = this.idxOfLeftChild(parent);
+            rightChild = this.idxOfRightChild(parent);
+        }
+        return min;
     }
 
     /**
