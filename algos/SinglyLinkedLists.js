@@ -422,13 +422,87 @@ class SinglyLinkedList {
     }
 
     /**
-     * Reverses this list in-place without using any extra lists or arrays.
-     * - Time: (?).
-     * - Space: (?).
+     * Reverses this list in-place without using any extra lists.
+     * - Time: O(n) linear, n = list length.
+     * - Space: O(1) constant.
      * @returns {SinglyLinkedList} This list.
-    */
-    reverse() { 
+     */
+    reverse() {
         //Your code here
+        let prev = null; //our reference to the previous node, start it at null 
+        let node = this.head; //we'll start at the head
+
+        while (node) { //while we have a node
+            const nextNode = node.next; //store reference to the next node -- this will be null for the last node
+            node.next = prev; //point the current node backwards
+            prev = node; //current node becomes the previous node
+            node = nextNode; //move on to the next node
+        }
+        this.head = prev; //reset head to the last known node
+        return this;
+    }
+
+    /**
+      * Determines whether the list has a loop in it which would result in
+      * infinitely traversing unless otherwise avoided. A loop is when a node's
+      * next points to a node that is behind it.
+      * - Time: O(n) linear, n = list length.
+      * - Space: O(1) constant.
+      * @returns {boolean} Whether the list has a loop or not.
+      */
+    hasLoop() {
+        /**
+          *APPROACH:
+          *two runners are sent out and one runner goes faster so it will
+          *eventually 'lap' the slower runner if there is a loop, 
+          *at the moment faster runner laps slower runner, they are at the same
+          *place, aka same instance of a node.
+        */
+        if (!this.head) {
+            return false;
+        }
+
+        let fasterRunner = this.head;
+        let runner = this.head;
+
+        while (fasterRunner && fasterRunner.next) {
+            runner = runner.next;
+            fasterRunner = fasterRunner.next.next;
+
+            if (runner === fasterRunner) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+   * Determines whether the list has a loop in it which would result in
+   * infinitely traversing unless otherwise avoided.
+   * In a normal object, the keys cannot be other objects, but in a Map object,
+   * they can be. We can't use the .data as the keys in a normal object because
+   * that would could cause hasLoop to return a false positive when there are
+   * nodes with duplicate data but no loop.
+   * - Time: O(n) linear, n = list length.
+   * - Space: O(n) linear due to the Map.
+   * @returns {boolean} Whether the list has a loop or not.
+   */
+    hasLoopMap() {
+        if (this.isEmpty()) {
+            return false; //no loops in emtpy lists
+        }
+
+        const seenMap = new Map(); //keeps track of all nodes visited
+        let runner = this.head;
+
+        while (runner) {
+            if (seenMap.has(runner)) { //if we've already seen this node, a loop exists
+                return true;
+            }
+            seenMap.set(runner, true); //otherwise, set this node a key with a value of true in our map
+            runner = runner.next; //check next node
+        }
+        return false; //if we run out of nodes to iterate, there is no loop
     }
 
     /**
@@ -439,7 +513,7 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {boolean} Whether the list has a loop or not.
     */
-    hasLoop() { 
+    hasLoop() {
         //Your code here
     }
 
