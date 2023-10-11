@@ -459,18 +459,18 @@ class SinglyLinkedList {
           *place, aka same instance of a node.
         */
         if (!this.head) {
-            return false;
+            return false; //no loops in empty lists
         }
 
-        let fasterRunner = this.head;
+        let fasterRunner = this.head; 
         let runner = this.head;
 
-        while (fasterRunner && fasterRunner.next) {
-            runner = runner.next;
-            fasterRunner = fasterRunner.next.next;
+        while (fasterRunner && fasterRunner.next) { //while fastRunner is still a node that has a .next
+            runner = runner.next; //runner moves one
+            fasterRunner = fasterRunner.next.next; //fastRunner moves two
 
             if (runner === fasterRunner) {
-                return true;
+                return true; //if they collide, fastRunner has lapped and landed on runner
             }
         }
         return false;
