@@ -420,9 +420,46 @@ class SinglyLinkedList {
         }
         return newList;
     }
+
+    /**
+     * Reverses this list in-place without using any extra lists or arrays.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {SinglyLinkedList} This list.
+    */
+    reverse() { 
+        //Your code here
+    }
+
+    /**
+     * Determines whether the list has a loop in it which would result in
+     * infinitely traversing unless otherwise avoided. A loop is when a node's
+     * next points to a node that is behind it.
+     * - Time: (?).
+     * - Space: (?).
+     * @returns {boolean} Whether the list has a loop or not.
+    */
+    hasLoop() { 
+        //Your code here
+    }
+
+
 }
 
-let listOne = new SinglyLinkedList().insertAtBackMany([2, 3, 4, 1]);
-let listTwo = new SinglyLinkedList().insertAtBackMany([5, 6, 7, 8, 9])
+const emptyList = new SinglyLinkedList();
+const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+const unorderedList = new SinglyLinkedList().insertAtBackMany([
+    -5, -10, 4, -3, 6, 1, -7, -2,
+]);
 
+// node 4 connects to node 1, back to head
+const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+perfectLoopList.head.next.next.next = perfectLoopList.head;
+
+// node 4 connects to node 2
+const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+loopList.head.next.next.next = loopList.head.next;
 
