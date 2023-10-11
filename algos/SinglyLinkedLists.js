@@ -489,7 +489,7 @@ class SinglyLinkedList {
    */
     hasLoopMap() {
         if (this.isEmpty()) {
-            return false; //no loops in emtpy lists
+            return false; //no loops in empty lists
         }
 
         const seenMap = new Map(); //keeps track of all nodes visited
