@@ -47,6 +47,16 @@ class DoublyLinkedList {
      */
     insertAtFront(data) {
         //Your code here
+        let newHead = new DLLNode(data);
+        if (this.isEmpty()) {
+            this.head = newHead;
+            this.tail = newHead;
+        } else {
+            this.head.prev = newHead;
+            newHead.next = this.head;
+            this.head = newHead;
+        }
+        return this;
     }
 
     /**
@@ -57,7 +67,16 @@ class DoublyLinkedList {
      * @returns {DoublyLinkedList} This list.
      */
     insertAtBack(data) {
-        //Your code here
+        let newTail = new DLLNode(data);
+        if (this.isEmpty()) {
+            this.head = newTail;
+            this.tail = newTail;
+        } else {
+            this.tail.next = newTail;
+            newTail.prev = this.tail;
+            this.tail = newTail;
+        }
+        return this;
     }
 
     // EXTRA
@@ -69,6 +88,7 @@ class DoublyLinkedList {
      */
     removeMiddleNode() {
         //Your code here
+        //Will push this after noon!
     }
 
     /**
