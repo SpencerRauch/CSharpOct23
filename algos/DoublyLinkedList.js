@@ -67,7 +67,9 @@ class DoublyLinkedList {
      * - Space: O(?).
      * @returns {any} The data of the removed node.
      */
-    removeMiddleNode() { }
+    removeMiddleNode() {
+        //Your code here
+     }
 
     /**
      * Determines if this list is empty.
