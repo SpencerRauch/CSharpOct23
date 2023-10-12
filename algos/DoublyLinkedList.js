@@ -69,7 +69,7 @@ class DoublyLinkedList {
      */
     removeMiddleNode() {
         //Your code here
-     }
+    }
 
     /**
      * Determines if this list is empty.
