@@ -31,7 +31,7 @@ class Stack {
      * Removes the top / last item from this stack.
      * - Time: O(1) constant.
      * - Space: O(1) constant.
-     * @returns {any} The removed item or undefined if this stack was empty.
+     * @returns {any} The removed item or null if this stack was empty.
      */
     pop() {
         return this.items.pop();
@@ -80,27 +80,49 @@ class StackNode {
 class LinkedListStack {
     constructor() {
         this.head = null;
+        //this.size = 0;
     }
 
     push(item) {
-        //your code here
+        const newNode = new StackNode(item);
+        if (this.head === null) {
+            this.head = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        //this.size++;
     }
 
     pop() {
-        //your code here
+        if (this.head === null) {
+            return null;
+        }
+
+        const removed = this.head;
+        this.head = this.head.next;
+
+        return removed.data;
+        //this.size--;
     }
 
     peek() {
-        //your code here
+        return this.isEmpty() ? null : this.head.data
     }
 
     isEmpty() {
-        //your code here
+        return this.head === null;
     }
 
     size() {
-        //your code here
-        //BONUS: how to make size O(1)?
+        let len = 0
+        let runner = this.head
+        while(runner){
+            len++
+            runner = runner.next
+        }
+        return len
+        // return this.size
     }
 
     print() {
