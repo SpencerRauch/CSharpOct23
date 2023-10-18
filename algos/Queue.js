@@ -184,12 +184,27 @@ class LinkedListQueue {
 
 }
 
-const arrayQueue = new Queue();
-arrayQueue.items = [1, 2, 9, 3, 3, 6];
-arrayQueue.print();
+
+//Returns boolean whether queues are same length with same elements
+//Use only methods from Queue classes, do not directly alter linked list or array
+//No extra arrays / objects / etc
+//The queues should be in the same order when you're done! 
+
+function CompareQueues(qOne, qTwo) {
+    //Your code here
+}
+
+
+const arrayQueueOne = new Queue();
+arrayQueueOne.items = [1, 2, 9, 3, 3, 6];
+arrayQueueOne.print();
+
+const arrayQueueTwo = new Queue();
+arrayQueueTwo.items = [7,7,7,7];
+arrayQueueTwo.print();
 
 const listQueue = new LinkedListQueue();
-listQueue.seed([1, 2, 3, 4, 5, 6, 7]);
+listQueue.seed([1, 2, 9, 3, 3, 6]);
 listQueue.print();
 
 
