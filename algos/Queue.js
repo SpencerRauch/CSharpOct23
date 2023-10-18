@@ -191,7 +191,26 @@ class LinkedListQueue {
 //The queues should be in the same order when you're done! 
 
 function CompareQueues(qOne, qTwo) {
-    //Your code here
+    if (qOne.len() != qTwo.len()) {
+        return false;
+    }
+    let count = 0;
+    let isEqual = true;
+    const len = qOne.len();
+
+    while (count < len) {
+        const dequeuedOne = qOne.dequeue();
+        const dequeuedTwo = qTwo.dequeue();
+
+        if (dequeuedOne !== dequeuedTwo) {
+            isEqual = false;
+        }
+
+        qOne.enqueue(dequeuedOne);
+        qTwo.enqueue(dequeuedTwo);
+        count++;
+    }
+    return isEqual;
 }
 
 
