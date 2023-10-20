@@ -462,7 +462,7 @@ class SinglyLinkedList {
             return false; //no loops in empty lists
         }
 
-        let fasterRunner = this.head; 
+        let fasterRunner = this.head;
         let runner = this.head;
 
         while (fasterRunner && fasterRunner.next) { //while fastRunner is still a node that has a .next
@@ -505,6 +505,26 @@ class SinglyLinkedList {
         return false; //if we run out of nodes to iterate, there is no loop
     }
 
+    /**
+    * In a sorted list of nodes with integers as data, removes the nodes with
+    * duplicate data so that only one node of each integer data remains.
+    * Time: O(?).
+    * Space: O(?).
+    * @returns {SinglyLinkedList} This list after dupes are removed.
+    */
+    removeDupesSorted() {
+        //your code here
+    }
+
+    /**
+    * Removes all the nodes that have a negative integer as their data.
+    * - Time: (?).
+    * - Space: (?).
+    * @returns {SinglyLinkedList} This list after the negatives are removed.
+    */
+    removeNegatives() {
+        //your code here 
+    }
 }
 
 const emptyList = new SinglyLinkedList();
@@ -514,6 +534,10 @@ const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
 const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
 const unorderedList = new SinglyLinkedList().insertAtBackMany([
     -5, -10, 4, -3, 6, 1, -7, -2,
+]);
+
+const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
+    1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
 
 // node 4 connects to node 1, back to head
