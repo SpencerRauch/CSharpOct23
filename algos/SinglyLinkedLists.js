@@ -513,7 +513,29 @@ class SinglyLinkedList {
     * @returns {SinglyLinkedList} This list after dupes are removed.
     */
     removeDupesSorted() {
-        //your code here
+        /* Approach: while runner isn't null
+            if runner.next is a dupe, update runner.next to .next.next
+            111233455 initial list, iter by iter example
+            11233455
+            1233455
+            123455
+            12345
+          */
+        if (this.isEmpty()) {
+            return this;
+        }
+
+        let runner = this.head;
+
+        while (runner.next) {
+            if (runner.data === runner.next.data) {
+                const newNext = runner.next.next;
+                runner.next = newNext;
+            } else {
+                runner = runner.next;
+            }
+        }
+        return this;
     }
 
     /**
@@ -523,7 +545,28 @@ class SinglyLinkedList {
     * @returns {SinglyLinkedList} This list after the negatives are removed.
     */
     removeNegatives() {
-        //your code here 
+        if (this.isEmpty()) {
+            return this;
+        }
+
+        let runner = this.head;
+
+        // get rid of all negatives at start so head will be positive, or null
+        while (runner && runner.data < 0) {
+            runner = runner.next;
+        }
+
+        this.head = runner;
+
+        //  head may have become null, that's why we check runner && runner.next
+        while (runner && runner.next) {
+            if (runner.next.data < 0) {
+                runner.next = runner.next.next;
+            } else {
+                runner = runner.next;
+            }
+        }
+        return this;
     }
 }
 
