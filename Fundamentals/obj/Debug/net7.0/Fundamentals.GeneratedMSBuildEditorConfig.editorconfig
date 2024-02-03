@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fundamentals
-build_property.ProjectDir = c:\stacks\CSharp\Oct23\Fundamentals\
+build_property.ProjectDir = c:\dojofiles\CSharpOct23\Fundamentals\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

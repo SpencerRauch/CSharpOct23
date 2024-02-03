@@ -9,21 +9,23 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FirstWeb
 build_property.RootNamespace = FirstWeb
-build_property.ProjectDir = c:\stacks\CSharp\Oct23\FirstWeb\
+build_property.ProjectDir = c:\dojofiles\CSharpOct23\FirstWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\stacks\CSharp\Oct23\FirstWeb
+build_property.MSBuildProjectDirectory = c:\dojofiles\CSharpOct23\FirstWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/stacks/CSharp/Oct23/FirstWeb/Views/First/MyForm.cshtml]
+[c:/dojofiles/CSharpOct23/FirstWeb/Views/First/MyForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcTXlGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/stacks/CSharp/Oct23/FirstWeb/Views/First/MyView.cshtml]
+[c:/dojofiles/CSharpOct23/FirstWeb/Views/First/MyView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcTXlWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/stacks/CSharp/Oct23/FirstWeb/Views/First/TryAgain.cshtml]
+[c:/dojofiles/CSharpOct23/FirstWeb/Views/First/TryAgain.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RcVHJ5QWdhaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
