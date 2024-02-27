@@ -16,6 +16,7 @@ class Queue {
      */
     len() {
         return this.items.length;
+        
     }
 
     /**
